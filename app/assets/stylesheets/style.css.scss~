@@ -1,0 +1,85 @@
+@import 'blueprint';
+$visted: #666666;
+
+*, table {
+  font-size: 12pt; 
+  font-family: Verdana;
+}
+body {
+  background-image: url('flower_pattern.jpg');
+}
+header {
+  @extend .prepend-1;
+  @extend .span-22;
+  @extend .append-1;
+  background: {
+    image: url('header_background.png');
+    repeat: no-repeat;
+  }
+  height: 212px;
+  min-height: 212px;
+}
+nav {
+  @extend .prepend-1;
+  @extend .span-22;
+  @extend .append-1;
+  background: {
+    image: url('nav_background.png');
+    repeat: no-repeat;
+  }
+  font: {
+    size: 16px;
+    font-weight: bold;
+  }
+  height: 43px;
+  min-height: 43px;
+  padding: {
+    top: 0px;
+    left: 150px;
+  }
+  color: #FFFFFF;
+  ul {
+    margin-top: 6px;
+    list-style: none;
+    font-weight: bold;
+    li {
+      float: left;
+      margin-right: 5px;
+      background-repeat: no-repeat;
+      padding-left: 8px;
+      a {
+        color: #FFFFFF;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          color: #666666;
+        }
+      
+      }
+    }
+  }
+}
+section {
+  @extend .prepend-1;
+  @extend .span-22;
+  @extend .append-1;
+  background-image: url('content_background.png');
+}
+footer {
+  @extend .span-24;
+  @extend .last;
+  text-align: center;
+  background: {
+    image: url('footer_background.png');
+    repeat: no-repeat;
+  }
+  height: 60px;
+  min-height: 60px;
+  padding-top: 10px;
+}
+
+
+.home {
+
+
+}

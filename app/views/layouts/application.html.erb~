@@ -27,7 +27,7 @@
       <li> | </li>
       <li>
         <%= link_to "Gallery", 
-            url_for(:controller => 'gallery', :action => 'index')  %></li>
+            url_for(:controller => 'gallery', :action => 'index')  %><%= link_to "Gallery" %></li>
       <li> | </li>
       <li>Weddings</li>
       <li> | </li>
