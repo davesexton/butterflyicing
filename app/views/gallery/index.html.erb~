@@ -1,0 +1,12 @@
+
+<div class="filterColumn">
+ <%= select_tag "filter", options_from_collection_for_select(@categories, :first, :last), :prompt => "Filter Results" %>
+</div>
+
+<div class="galleryColumn">
+  <% @pics.sort.each do |pic| %>
+    <div class="thumbnail">
+    <%= image_tag "gallery_thumbnail#{pic[0]}", class: "#{pic[1]}" %><br />
+    </div>
+  <% end %>
+</div>

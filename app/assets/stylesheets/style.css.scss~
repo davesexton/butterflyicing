@@ -1,5 +1,6 @@
 @import 'blueprint';
-$visted: #666666;
+$menuover: #666666;
+$menulink: #FFFFFF;
 
 *, table {
   font-size: 12pt; 
@@ -37,7 +38,7 @@ nav {
     top: 0px;
     left: 150px;
   }
-  color: #FFFFFF;
+  color: $menulink;
   ul {
     margin-top: 6px;
     list-style: none;
@@ -48,11 +49,11 @@ nav {
       background-repeat: no-repeat;
       padding-left: 8px;
       a {
-        color: #FFFFFF;
+        color: $menulink;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
-          color: #666666;
+          color: $menuover;
         }
       
       }
@@ -82,4 +83,27 @@ footer {
 .home {
 
 
+}
+.gallery {
+  .filterColumn {
+    @extend .span-4;   
+  }
+  .galleryColumn {
+    @extend .span-17;
+    @extend .last;
+    .thumbnail {
+      float: left;
+      position: relative;
+      width: 130px;
+      max-width: 130px;
+      height: 90px;
+      max-height: 90px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+      }
+    }
+  }
 }

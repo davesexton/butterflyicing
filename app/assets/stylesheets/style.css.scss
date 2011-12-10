@@ -84,3 +84,26 @@ footer {
 
 
 }
+.gallery {
+  .filterColumn {
+    @extend .span-4;   
+  }
+  .galleryColumn {
+    @extend .span-17;
+    @extend .last;
+    .thumbnail {
+      float: left;
+      position: relative;
+      width: 130px;
+      max-width: 130px;
+      height: 85px;
+      max-height: 85px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+      }
+    }
+  }
+}

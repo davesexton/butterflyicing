@@ -1,2 +1,12 @@
-<h1>Gallery#index</h1>
-<p>Find me in app/views/gallery/index.html.erb</p>
+
+<div class="filterColumn">
+ <%= select_tag "filter", options_from_collection_for_select(@categories, :first, :last), :prompt => "Filter Results" %>
+</div>
+
+<div class="galleryColumn">
+  <% @pics.sort.each do |pic| %>
+    <div class="thumbnail <%= pic[1] %>">
+    <%= image_tag "gallery_thumbnail#{pic[0]}" %><br />
+    </div>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-<div id="container" class="container">
+<div id="container" class="container grid">
   
   <header>
   hfdkshfks
@@ -27,7 +27,7 @@
       <li> | </li>
       <li>
         <%= link_to "Gallery", 
-            url_for(:controller => 'gallery', :action => 'index')  %><%= link_to "Gallery" %></li>
+            url_for(:controller => 'gallery', :action => 'index')  %></li>
       <li> | </li>
       <li>Weddings</li>
       <li> | </li>
