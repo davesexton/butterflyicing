@@ -2,8 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->  $('#filter').change( -> 
-  $('#filter option:selected').each( ->
-    $('.galleryColumn:not(.' + $(this).val() +')').slideUp
+
+#  x = $('#filter option:selected').val().toLowerCase()
+#  if x == 'all' or x == ''
+#    $('.thumbnail').show() 
+#  else
+#    $('.thumbnail').hide()
+#    $('#filter option:selected').each( ->
     
-  )
+#      $('.' + x).show()
+    
+#    )
 )

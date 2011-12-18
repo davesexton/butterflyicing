@@ -10,9 +10,9 @@ body {
   background-image: url('flower_pattern.jpg');
 }
 header {
-  @extend .prepend-1;
-  @extend .span-22;
-  @extend .append-1;
+  @include prepend(1);
+  @include span(22);
+  @include append(1);
   background: {
     image: url('header_background.png');
     repeat: no-repeat;
@@ -21,9 +21,9 @@ header {
   min-height: 212px;
 }
 nav {
-  @extend .prepend-1;
-  @extend .span-22;
-  @extend .append-1;
+  @include prepend(1);
+  @include span(22);
+  @include append(1);
   background: {
     image: url('nav_background.png');
     repeat: no-repeat;
@@ -61,13 +61,13 @@ nav {
   }
 }
 section {
-  @extend .prepend-1;
-  @extend .span-22;
-  @extend .append-1;
+  @include prepend(2);
+  @include span(20);
+  @include append(2);
   background-image: url('content_background.png');
 }
 footer {
-  @extend .span-24;
+  @include span(24);
   @extend .last;
   text-align: center;
   background: {
@@ -78,32 +78,99 @@ footer {
   min-height: 60px;
   padding-top: 10px;
 }
-
+h1 {
+  color: #D85A66;
+  font-size: 2em;
+  margin {
+    bottom: 0.25em;
+    top: 2em;
+  }
+  border-bottom: solid 1px #D85A66;
+}
 
 .home {
-
-
-}
-.gallery {
-  .filterColumn {
-    @extend .span-4;   
+  .imgHide {
+    display: none;
   }
+  .imgShow {
+    display: block;
+  }
+  #imgRotor1 {
+    float: left;
+  }
+  #imgRotor2 {
+    float: right;
+  }
+}
+.imgRotor {
+  height: 369px;
+  display: block;
+  background-color: #FFFFFF;
+  margin-color: #FFFFFF;
+  padding: 2em;
+}
+$picturewidth: 130px;
+$pictureheight: 80px;
+.gallery {
+  select {
+    border-color: #333333;
+    color: #333333;
+    background-color: transparent;
+  }
+  option {
+    background-color: #E5E3E1;
+  }
+  .filterColumn {
+    @include span(22);
+    @include last; 
+  }
+  #gallery {
+    @include span(22);
+    position: relative;
+    height: $pictureheight;
+    overflow: hidden;
+  }
+  #thumbs {
+    //overflow: hidden;
+    height: $pictureheight;
+    max-height: $pictureheight;
+    //width: 20000px;
+    float: left;
+    position: absolute;
+  }
+  ul {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    height: $pictureheight;
+    width: 100%;
+    float: left;
+  }
+  .thumbnail {
+    float: left;
+    img {
+      height: $pictureheight;
+      float: left;
+    }
+  }
+  /*
   .galleryColumn {
-    @extend .span-17;
-    @extend .last;
+    //@include span(17);
+    //@include last;
     .thumbnail {
       float: left;
       position: relative;
-      width: 130px;
-      max-width: 130px;
-      height: 90px;
-      max-height: 90px;
+      width: $picturewidth;
+      max-width: $picturewidth;
+      height: $pictureheight;
+      max-height: $pictureheight;
       overflow: hidden;
       img {
         position: absolute;
-        top: 1px;
-        left: 1px;
+        top: 0px;
+        left: 0px;
       }
     }
   }
+    */
 }

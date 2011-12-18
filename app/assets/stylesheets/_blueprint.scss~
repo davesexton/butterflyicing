@@ -243,12 +243,9 @@ caption {
   margin-left: 0;
   padding-left: 0;
 }
-@mixin last {
+.last {
   margin-right: 0;
   padding-right: 0;
-}
-.last {
-  @include last;
 }
 .top {
   margin-top: 0;

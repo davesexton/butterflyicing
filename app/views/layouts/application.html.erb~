@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-<div id="container" class="container grid">
+<div id="container" class="container">
   
   <header>
   hfdkshfks
