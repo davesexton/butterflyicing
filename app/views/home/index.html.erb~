@@ -1,4 +1,4 @@
-<div class="imgRotor">
+<div class="imgRotor" id="imgRotor1">
     <%= image_tag "home01.jpg", class: "imgShow" %>
     <%= image_tag "home02.jpg", class: "imgHide" %>
     <%= image_tag "home03.jpg", class: "imgHide" %>
@@ -24,7 +24,7 @@
 <p>Making cakes that taste as good as they look and promoting fun is the key to the
    success of Butterfly Icing.</p>
 <p>So go on indulge in some sugar and fun!</p>
-<div class="imgRotor">
+<div class="imgRotor" id="imgRotor2">
     <%= image_tag "home04.jpg", class: "imgShow" %>
     <%= image_tag "home05.jpg", class: "imgHide" %>
     <%= image_tag "home06.jpg", class: "imgHide" %>

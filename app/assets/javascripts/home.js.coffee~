@@ -12,7 +12,7 @@ swapImages = (id) ->
       active.removeClass('imgShow').addClass 'imgHide'
       next.fadeIn('slow').addClass 'imgShow'
 
-#setInterval ->
-#  swapImages "imgRotor"
-#, 5000
+setInterval ->
+  swapImages "imgRotor"
+, 5000
 

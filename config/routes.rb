@@ -1,9 +1,14 @@
 Butterflyicing::Application.routes.draw do
-  get "gallery/index"
   get "home/index"
+  match 'gallery/:cat/(:id)' => 'gallery#show'
+  match 'gallery' => 'gallery#index'
+  match 'ourcakes' => 'ourcakes#index'
+  match 'weddings' => 'weddings#index'
+  match 'cookies' => 'cookies#index'
+  match 'parties' => 'parties#index'
+  match 'contactus' => 'contactus#index'
+  #resources :gallery
   root :to => 'home#index'
-  
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

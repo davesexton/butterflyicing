@@ -1,0 +1,43 @@
+ <h1>Butterfly Icing Gallery</h1>
+ <p>Below is a selection of cakes and cookies that have been individually designed for
+    special occasions. Use the filter on the left hand side to only show pictures for
+    a specific type.</p>
+
+<div id="viewport">
+<ul>
+   <% @pics.sort.each do |pic| %>
+    <% if pic[1] =~ /cookie/ %>
+  <li><div class="panel"><div class="inner">
+  <%= image_tag "gallery_thumbnail#{pic[0]}" %>
+  </div></div></li>
+    <% end %>
+   <% end %>
+  
+  
+  </ul>
+</div>
+
+<div><a href="#" id="ml">Left</a>
+<a href="#" id="mr">Right</a>
+<a href="#" id="test">Test</a>
+</div>
+<span id="dummy"></span><br />
+<div class="filterColumn">
+  <%= select_tag "filter", options_from_collection_for_select(@categories, :first, :last), :prompt => "Filter Results" %>
+</div>
+<div id="gallery">
+  <div id="thumbs">
+    <ul>
+      <% @pics.sort.each do |pic| %>
+     
+        <li class="thumbnail <%= pic[1] %>">
+        <%= image_tag "gallery_thumbnail#{pic[0]}" %><br />
+        </li>
+
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br />
+
+

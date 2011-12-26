@@ -13,6 +13,8 @@ swapImages = (id) ->
       next.fadeIn('slow').addClass 'imgShow'
 
 setInterval ->
-  swapImages "imgRotor"
+  swapImages "imgRotorLeft"
 , 5000
-
+setInterval ->
+  swapImages "imgRotorRight"
+, 5000

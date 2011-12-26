@@ -1,0 +1,24 @@
+<h2>Ordering is simple…</h2>
+<p>Take a look at the website to see if any of the designs are what you are looking
+   for. If not, and you have a design in mind contact Joanne and from there she can
+   look at putting your idea together.</p>
+<p>If you are unsure of what to order, speak to Joanne and together you can look at
+   what cake best suits your needs.</p>
+<p>Each cake can be made differently depending on your specifications.</p>
+<p>Ordering a cake is usually done two weeks in advance, but can be made as soon as
+   you know what you want, so doesn’t matter how far off this is.</p>
+<p>For Wedding cakes, we ideally need 3 months notice' however we can try our best
+   to accommodate late orders, so please speak with Joanne for further assistance.</p>
+<h2>Collection and Delivery</h2>
+<p>Collection of cakes can be made from one of two London addresses located in Loughton
+   or Bethnal Green Between the hours of Mon-Fri 10am-7pm (closed Sundays unless stated)</p>
+<p>You can contact us by telephone on: 07539 654 402</p>
+<p>Or you can use the form below:</p>
+<p><label for="name">Your name:</label>
+   <input type="text" id="name" /><br />
+   <label for="email">Your email addess:</label>
+   <input type="text" id="email" /><br />
+   <label for="message">Your message:</label><br />
+   <textarea id="message"></textarea><br />
+   <input type="submit" value="hi" />
+</p>

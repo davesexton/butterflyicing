@@ -14,7 +14,7 @@ p {
   font-size: 1em; 
 }
 b {
-
+  color: $pinkcolor;
 }
 body {
   background-image: url('flower_pattern.jpg');
@@ -104,21 +104,22 @@ h2 {
   margin-bottom: 0.25em;
   border-bottom: solid 1px $bluecolor;
 }
-.home {
-  .imgHide {
-    display: none;
-  }
-  .imgShow {
-    display: block;
-  }
-  #imgRotor1 {
-    float: left;
-  }
-  #imgRotor2 {
-    float: right;
-  }
+.imgHide {
+  display: none;
 }
-.imgRotor {
+.imgShow {
+  display: block;
+}
+.imgRotorLeft {
+  float: left;
+  height: 369px;
+  display: block;
+  background-color: #FFFFFF;
+  margin-color: #FFFFFF;
+  padding: 2em;
+}
+.imgRotorRight {
+  float: right;
   height: 369px;
   display: block;
   background-color: #FFFFFF;
@@ -126,67 +127,22 @@ h2 {
   padding: 2em;
 }
 $picturewidth: 130px;
-$pictureheight: 80px;
+$pictureheight: 100px;
 .gallery {
-  select {
-    border-color: #333333;
-    color: #333333;
-    background-color: transparent;
-  }
-  option {
-    background-color: #E5E3E1;
-  }
-  .filterColumn {
-    @include span(22);
-    @include last; 
-  }
-  #gallery {
-    @include span(22);
-    position: relative;
-    height: $pictureheight;
-    overflow: hidden;
-  }
-  #thumbs {
-    //overflow: hidden;
-    height: $pictureheight;
-    max-height: $pictureheight;
-    //width: 20000px;
-    float: left;
-    position: absolute;
-  }
-  ul {
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    height: $pictureheight;
-    width: 100%;
-    float: left;
-  }
-  .thumbnail {
-    float: left;
+  #galleryIndex {
     img {
-      height: $pictureheight;
-      float: left;
+      height: 100px;
+      margin: 1em;
+      border: solid 3px $pinkcolor;
+    }
+    li {
+      display: block;
+      background-color: $bluecolor;
+      margin-top: 0.5em;
+      width: 600px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      border: solid 1px $pinkcolor;
     }
   }
-  /*
-  .galleryColumn {
-    //@include span(17);
-    //@include last;
-    .thumbnail {
-      float: left;
-      position: relative;
-      width: $picturewidth;
-      max-width: $picturewidth;
-      height: $pictureheight;
-      max-height: $pictureheight;
-      overflow: hidden;
-      img {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-      }
-    }
-  }
-    */
 }

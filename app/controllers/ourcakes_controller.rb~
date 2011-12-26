@@ -1,0 +1,7 @@
+class OurcakesController < ApplicationController
+  def index
+    u = 'joanne@butterflyicing'
+    d = 'butterflyicing'
+    @email = "#{u}@#{d}.co.uk"
+  end
+end
