@@ -17,8 +17,8 @@
 <p><label for="name">Your name:</label>
    <input type="text" id="name" /><br />
    <label for="email">Your email addess:</label>
-   <input type="text" id="email" /><br />
+   <input type="text" id="email" /><br /><br />
    <label for="message">Your message:</label><br />
    <textarea id="message"></textarea><br />
-   <input type="submit" value="hi" />
+   <input type="submit" value="Send" />
 </p>

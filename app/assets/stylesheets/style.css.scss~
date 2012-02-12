@@ -29,6 +29,13 @@ header {
   }
   height: 212px;
   min-height: 212px;
+  h1 {
+    color: $menulink;
+    top: 170px;
+    left: 480px;
+    position: absolute;
+    border: none;
+  }
 }
 nav {
   @include prepend(1);
@@ -58,6 +65,7 @@ nav {
       margin-right: 5px;
       background-repeat: no-repeat;
       padding-left: 8px;
+      color: $menulink;
       a {
         color: $menulink;
         text-decoration: none;
@@ -126,7 +134,11 @@ h2 {
   margin-color: #FFFFFF;
   padding: 2em;
 }
-$picturewidth: 130px;
+label {
+  width: 129px;
+  display: inline-block;
+}
+$picturewidth: 100px;
 $pictureheight: 100px;
 .gallery {
   #galleryIndex {
