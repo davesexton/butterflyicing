@@ -13,7 +13,7 @@
 <body class="<%= controller.controller_name %>">
 <div id="container" class="container">
   <header>
-    <h2>the perfect cake for the perfect occasion</h2>
+    <h1>the perfect cake for the perfect occasion</h1>
   </header>
   <nav>
     <ul>

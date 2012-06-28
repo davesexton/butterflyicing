@@ -148,14 +148,19 @@ $pictureheight: 100px;
       margin: 1em;
       border: solid 3px $pinkcolor;
     }
-    li {
-      display: block;
+    div {
       background-color: $bluecolor;
       margin-top: 0.5em;
-      width: 600px;
-      -moz-border-radius: 20px;
-      border-radius: 20px;
-      border: solid 1px $pinkcolor;
+      float: left;
+      a: {
+        display: block;
+        clear: both;
+      }
+      div {
+        float: none;
+        clear: both;
+      }
     }
   }
 }
+
