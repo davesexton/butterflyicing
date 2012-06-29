@@ -4,4 +4,4 @@
 
 $ ->
   if $('.gallery').length > 0
-    alert 'hi'     
+    console.log 'hi'     

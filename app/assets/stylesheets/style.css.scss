@@ -32,8 +32,8 @@ header {
   h1 {
     color: $menulink;
     top: 170px;
-    left: 480px;
-    position: absolute;
+    left: 400px;
+    position: relative;
     border: none;
   }
 }
@@ -47,7 +47,7 @@ nav {
   }
   font: {
     size: 16px;
-    font-weight: bold;
+    weight: bold;
   }
   height: 43px;
   min-height: 43px;
@@ -84,6 +84,7 @@ section {
   @include append(2);
   padding-top: 1.5em;
   background-image: url('content_background.png');
+  min-height: 600px;
 }
 footer {
   @include span(24);
@@ -146,19 +147,33 @@ $pictureheight: 100px;
       height: $pictureheight;
       width: $picturewidth;
       margin: 1em;
-      border: solid 3px $pinkcolor;
+      #border: solid 3px $pinkcolor;
     }
     div {
       background-color: $bluecolor;
       margin-top: 0.5em;
       float: left;
-      a: {
+      border: solid #FFFFFF 3px;
+      a {
         display: block;
         clear: both;
+        color: $menulink;
+        text-decoration: none;
+        font: {
+          size: 16px;
+          weight: bold;
+        }
+        &:hover {
+          text-decoration: underline;
+          color: $menuover;
+        }
       }
       div {
         float: none;
         clear: both;
+        border: solid $bluecolor 1px;
+        padding: 0.5em;
+        text-align: center; 
       }
     }
   }
