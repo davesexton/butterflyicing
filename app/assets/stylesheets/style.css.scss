@@ -142,14 +142,16 @@ label {
 $picturewidth: 100px;
 $pictureheight: 100px;
 .gallery {
+/*
   #galleryDisplay {
     @include span(9);
 
   }
+
   #imgViewer {
     @include span(9);
   }
-
+*/
   #galleryIndex {
     img {
       height: $pictureheight;

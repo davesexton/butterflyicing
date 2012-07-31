@@ -63,15 +63,22 @@ class GalleryController < ApplicationController
       render partial: 'image_viewer'
     else
       @pics = Dir[path].collect do |f|
-        t = f.sub('gallery', 'gallery_thumbnail')
-        i = t.sub('./app/assets/images', '/assets')
-        l = f.sub('./app/assets/images', '').chomp('.jpg')
-        id = l.split('/')[3].to_i
-        make_thumb f unless FileTest.exist?(t)
+        make_thumb f unless FileTest.exist?(f.sub('gallery', 'gallery_thumbnail'))
+        idx = f.match('\d+')[0]
         pic = Hash.new(0)
-        pic['image_url'] = i
-        pic['link'] = l
-        pic['sort'] = id
+        pic['thumb_url'] = "/assets/gallery_thumbnail/#{cat}/#{idx}.jpg"
+        pic['image_url'] = "/assets/gallery/#{cat}/#{idx}.jpg"
+        pic['sort'] = idx.to_i
+
+        #t = f.sub('gallery', 'gallery_thumbnail')
+        #i = t.sub('./app/assets/images', '/assets')
+        #l = f.sub('./app/assets/images', '').chomp('.jpg')
+        #id = l.split('/')[3].to_i
+        #make_thumb f unless FileTest.exist?(t)
+        #pic = Hash.new(0)
+        #pic['image_url'] = i
+        #pic['link'] = l
+        #pic['sort'] = id
         pic
       end.sort_by { |s| s['sort'] }
     end
