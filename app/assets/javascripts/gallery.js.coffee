@@ -4,4 +4,12 @@
 
 $ ->
   if $('.gallery').length > 0
-    console.log 'hi'     
+    $('#galleryDisplay a').each ()->
+      $(@).attr('href', 'javascript:void(0);').click (e) ->
+        e.preventDefault
+        url = $(@).children('img').attr('src')
+        url = url.replace /_thumbnail/, ''
+        url = url.replace /\.jpg/, ''
+        url = url.replace /\/assets/, ''
+        $('#imgViewer').load url, (e)->
+          console.log 'hi'

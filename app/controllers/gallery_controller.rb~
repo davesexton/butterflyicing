@@ -1,7 +1,7 @@
 class GalleryController < ApplicationController
   def index
     path = './app/assets/images/gallery/'
-   
+
     @pics = Dir["#{path}**/1.jpg"].collect do |f|
       t = f.sub('gallery', 'gallery_thumbnail')
       make_thumb f unless FileTest.exist?(t)
@@ -12,14 +12,14 @@ class GalleryController < ApplicationController
       pic['category'] = cat.capitalize
       pic
     end
-    
+
   end
   def indexx
     require 'RMagick'
     #include 'Magick'
     path = './app/assets/images/gallery/'
     @categories = Hash.new(0)
-    
+
     @pics = Dir["#{path}**/*.*"].collect do |f|
       t = f.sub('gallery', 'gallery_thumbnail')
       unless FileTest.exist?(t)
@@ -27,27 +27,41 @@ class GalleryController < ApplicationController
         img = img.thumbnail(0.36)
         img.write(t)
       end
-      
+
       a = f.sub(path, '').split('/')
       @categories[a[0].capitalize] += 1
       ["/" + a.join('/'), a[0]]
     end
-    @categories.each do |k, v| 
+    @categories.each do |k, v|
       @categories[k] = "#{k} (#{v})"
     end
     @categories['All'] = "All (#{@pics.size})"
     @categories = Hash[@categories.sort]
-    
+
   end
-    
+
   def show
     cat = params[:cat]
+    path = "./app/assets/images/gallery/#{cat}/*.jpg"
+    files = Dir[path].sort_by{ |i| i.match('\d+')[0].to_i }
+
+
     if params[:id]
       id = params[:id]
+      img = "./app/assets/images/gallery/#{cat}/#{id}.jpg"
+
+      @links = Hash.new(0)
+      @links[:current] = img
+      @links[:next] = files[files.find_index(img) + 1]
+      @links[:prev] = files.find_index(img) == 0 ? nil : files[files.find_index(img) - 1]
+      @links[:first] = files[0]
+      @links[:last] = files[files.count - 1]
+      @links.each do |k, v|
+        @links[k] = v.nil? ? nil : "/gallery/#{cat}/#{v.match('\d+')}"
+      end
       @pic = "/assets/gallery/#{cat}/#{id}.jpg"
-      render 'image'  
+      render 'image'
     else
-      path = "./app/assets/images/gallery/#{cat}/*.jpg"
       @pics = Dir[path].collect do |f|
         t = f.sub('gallery', 'gallery_thumbnail')
         i = t.sub('./app/assets/images', '/assets')
@@ -59,11 +73,10 @@ class GalleryController < ApplicationController
         pic['link'] = l
         pic['sort'] = id
         pic
-      end
-      @pics.sort_by { |s| s['sort'] }
+      end.sort_by { |s| s['sort'] }
     end
   end
-  
+
   private
   def make_thumb path
     require 'RMagick'
@@ -74,7 +87,3 @@ class GalleryController < ApplicationController
     img.write(thumb)
   end
 end
-
-
-
-
