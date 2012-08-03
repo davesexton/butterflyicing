@@ -11,7 +11,7 @@ $ ->
 #    y = h / 2 - 135
 #    # 360 270
 
-    $('#galleryDisplay a').lightbox()
+    $('#galleryDisplay a').lightBox()
 #      $(@).attr('href', 'javascript:void(0);').click (e)->
 #        e.preventDefault
 #        $('#imgViewer').css(

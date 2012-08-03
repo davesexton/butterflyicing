@@ -1,19 +1,17 @@
-<h1>Butterfly Icing Gallery</h1>
-<p>Click the images below to view a selection of cakes and cookies that have been 
-   individually designed for special occasions.</p>
+<h2>Image Gallery</h2>
+<p>Click the links on the left to filter by category, click the thunbnail images
+    below to view the full size image.</p>
 
 <div id="galleryIndex">
-<% @pics.each do |pic| %>
+<% @cats.each do |k, v| %>
   <div>
-    <div>
-        <%= link_to image_tag(pic['image_url']), pic['link'] %>
-    </div>
-    <div>
-        <%= link_to pic['category'], pic['link'] %>
-    </div>
+    <%= link_to_unless_current k, v %>
   </div>
 <% end %>
 </div>
 
-
-
+<div id="galleryDisplay">
+  <% @pics.each do |pic| %>
+    <%= link_to(image_tag(pic['thumb_url']), pic['image_url']) %>
+  <% end %>
+</div>

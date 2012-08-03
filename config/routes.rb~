@@ -5,7 +5,8 @@ Butterflyicing::Application.routes.draw do
   match 'ourcakes' => 'ourcakes#index'
   match 'weddings' => 'weddings#index'
   match 'cookies' => 'cookies#index'
-  match 'cookies' => 'cookies#index'
+  match 'parties' => 'parties#index'
+  match 'contactus' => 'contactus#index'
   #resources :gallery
   root :to => 'home#index'
 

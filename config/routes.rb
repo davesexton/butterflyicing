@@ -1,6 +1,7 @@
 Butterflyicing::Application.routes.draw do
   get "home/index"
-  match 'gallery/:cat/(:id)' => 'gallery#show'
+  match 'gallery/:cat' => 'gallery#index'
+  #match 'gallery/:cat/(:id)' => 'gallery#show'
   match 'gallery' => 'gallery#index'
   match 'ourcakes' => 'ourcakes#index'
   match 'weddings' => 'weddings#index'

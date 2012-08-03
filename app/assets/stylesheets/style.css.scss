@@ -41,6 +41,7 @@ nav {
   @include prepend(1);
   @include span(22);
   @include append(1);
+  @include last;
   background: {
     image: url('nav_background.png');
     repeat: no-repeat;
@@ -55,7 +56,6 @@ nav {
     top: 0px;
     left: 150px;
   }
-  color: $menulink;
   ul {
     margin-top: 6px;
     list-style: none;
@@ -65,7 +65,7 @@ nav {
       margin-right: 5px;
       background-repeat: no-repeat;
       padding-left: 8px;
-      color: $menulink;
+      color: $pinkcolor;
       a {
         color: $menulink;
         text-decoration: none;
@@ -73,11 +73,13 @@ nav {
           text-decoration: underline;
           color: $menuover;
         }
-
       }
     }
   }
 }
+.menuSelected {
+        color: #FF0000;
+      }
 section {
   @include prepend(2);
   @include span(20);
@@ -88,7 +90,7 @@ section {
 }
 footer {
   @include span(24);
-  @extend .last;
+  @include last;
   text-align: center;
   background: {
     image: url('footer_background.png');
@@ -142,28 +144,34 @@ label {
 $picturewidth: 100px;
 $pictureheight: 100px;
 .gallery {
-/*
   #galleryDisplay {
-    @include span(9);
-
+    @include span(17);
+    @include last;
   }
-
-  #imgViewer {
-    @include span(9);
-  }
-*/
   #galleryIndex {
+    @include span(3);
+    color: $pinkcolor;
+    font: {
+      size: 16px;
+      weight: bold;
+    }
     img {
       height: $pictureheight;
       width: $picturewidth;
       margin: 1em;
-      #border: solid 3px $pinkcolor;
+      border: solid 3px $pinkcolor;
     }
     div {
       background-color: $bluecolor;
-      margin-top: 0.5em;
+      margin-top: 0px;
       float: left;
-      border: solid #FFFFFF 3px;
+      border: {
+        style: solid;
+        width: 0px 0px 2px 0px;
+        color: #FFFFFF;
+      }
+      padding-left: 0.5em;
+      width: 100%;
       a {
         display: block;
         clear: both;
