@@ -1,8 +1,0 @@
-<div id="galleryNav">
-  <%= link_to 'back to gallery', gallery_path() %>
-</div>
-<div id="galleryDisplay">
-  <% @pics.each do |pic| %>
-    <%= link_to(image_tag(pic['thumb_url']), pic['image_url']) %>
-  <% end %>
-</div>

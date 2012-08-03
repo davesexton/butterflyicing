@@ -122,20 +122,31 @@ h2 {
   display: block;
 }
 .imgRotorLeft {
-  float: left;
+  /* float: left;
   height: 369px;
   display: block;
+  padding: 2em;
+  */
   background-color: #FFFFFF;
   margin-color: #FFFFFF;
-  padding: 2em;
+  @include span(7);
 }
 .imgRotorRight {
-  float: right;
+  /* float: right;
   height: 369px;
   display: block;
+  padding: 2em; */
   background-color: #FFFFFF;
   margin-color: #FFFFFF;
-  padding: 2em;
+  @include span(7);
+  @include last;
+}
+.columnRight {
+  @include span(14);
+  @include last;
+}
+.columnLeft {
+  @include span(13);
 }
 label {
   width: 129px;
@@ -165,11 +176,6 @@ $pictureheight: 100px;
       background-color: $bluecolor;
       margin-top: 0px;
       float: left;
-      div {
-        &:before {
-          content: "*";
-        }
-      }
       border: {
         style: solid;
         width: 0px 0px 2px 0px;

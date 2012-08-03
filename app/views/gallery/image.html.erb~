@@ -1,7 +1,0 @@
-<div>
-  <%= link_to '<< previous', @links[:prev] %>
-  <%= link_to 'next >>', @links[:next] %>
-</div>
-<div>
-  <%= image_tag @pic %>
-</div>

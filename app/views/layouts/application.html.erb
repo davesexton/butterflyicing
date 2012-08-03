@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Butterfly Icing</title>
+  <title>Butterfly Icing<%= ' - ' + @title unless @title == nil %></title>
   <%= stylesheet_link_tag    "application" %>
   <!--[if lte IE 8]>
     <%= stylesheet_link_tag    "ie" %>

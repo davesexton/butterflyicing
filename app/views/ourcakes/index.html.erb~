@@ -1,4 +1,4 @@
-<div class="imgRotor" id="imgRotor1">
+<div class="imgRotorRight">
     <%= image_tag "our_cakes1.jpg", class: "imgShow" %>
     <%= image_tag "our_cakes2.jpg", class: "imgHide" %>
     <%= image_tag "our_cakes3.jpg", class: "imgHide" %>

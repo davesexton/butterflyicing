@@ -5,7 +5,7 @@
 <div id="galleryIndex">
 <% @cats.each do |k, v| %>
   <div>
-    <%= link_to k, v %>
+    <%= link_to_unless_current k, v %>
   </div>
 <% end %>
 </div>

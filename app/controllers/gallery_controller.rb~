@@ -1,20 +1,6 @@
 class GalleryController < ApplicationController
   def index
-    path = './app/assets/images/gallery/'
-
-    @options = Dir["#{path}**/1.jpg"].collect do |f|
-      t = f.sub('gallery', 'gallery_thumbnail')
-      make_thumb f unless FileTest.exist?(t)
-      pic = Hash.new(0)
-      cat = f.sub(path, '').sub('/1.jpg', '')
-      #pic['image_url'] = t.sub('./app', '').sub('/images', '')
-      pic['link'] = "/gallery/#{cat}"
-      pic['category'] = cat.capitalize
-      pic
-    end
-
     cat = params[:cat] ? params[:cat] : 'birthday'
-
     path = './app/assets/images/gallery/**'
 
     @cats = Hash[*Dir[path].sort.collect do |d|
