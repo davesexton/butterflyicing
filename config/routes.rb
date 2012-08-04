@@ -1,4 +1,6 @@
 Butterflyicing::Application.routes.draw do
+  resources :users
+
   #get "home/index"
   match 'gallery/:cat' => 'gallery#index'
   #match 'gallery/:cat/(:id)' => 'gallery#show'

@@ -1,3 +1,4 @@
+<% @title = 'Cookies' %>
 <div class="imgRotorRight">
     <%= image_tag "cookie01.jpg", class: "imgShow" %>
     <%= image_tag "cookie02.jpg", class: "imgHide" %>

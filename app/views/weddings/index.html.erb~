@@ -4,7 +4,7 @@
     <%= image_tag "wedding02.jpg", class: "imgHide" %>
     <%= image_tag "wedding03.jpg", class: "imgHide" %>
 </div>
-<div class="columnLeft">
+<div class="columnRight">
   <h2>Wedding Cakes</h2>
   <p><strong>All prices are set to individual needs and quoted depending on size, tiers,
              cake and design, please ask for details for a free quote</strong></p>

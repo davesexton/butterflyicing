@@ -142,7 +142,7 @@ h2 {
   @include last;
 }
 .columnRight {
-  @include span(14);
+  @include span(1);
   @include last;
 }
 .columnLeft {

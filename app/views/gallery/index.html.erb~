@@ -1,3 +1,4 @@
+<% @title = 'Gallery' %>
 <h2>Image Gallery</h2>
 <p>Click the links on the left to filter by category, click the thunbnail images
     below to view the full size image.</p>

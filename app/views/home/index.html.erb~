@@ -1,8 +1,8 @@
 <% @title = 'Home' %>
 <div class="imgRotorLeft">
-  <%= image_tag "home01.jpg", class: "imgShow" %>
-  <%= image_tag "home02.jpg", class: "imgHide" %>
-  <%= image_tag "home03.jpg", class: "imgHide" %>
+  <%= image_tag "home01.jpg", class: "imgShow", size: '246x369' %>
+  <%= image_tag "home02.jpg", class: "imgHide", size: '246x369' %>
+  <%= image_tag "home03.jpg", class: "imgHide", size: '246x369' %>
 </div>
 <div class="columnRiight">
   <h1>Welcome to Butterfly Icing</h1>
@@ -25,11 +25,6 @@
   <p>Making cakes that taste as good as they look and promoting fun is the key to the
      success of Butterfly Icing.</p>
   <p>So go on indulge in some sugar and fun!</p>
-</div>
-<div class="imgRotorRight">
-  <%= image_tag "home04.jpg", class: "imgShow" %>
-  <%= image_tag "home05.jpg", class: "imgHide" %>
-  <%= image_tag "home06.jpg", class: "imgHide" %>
 </div>
 <div class="columnLeft">
   <h2>What Our Customers Are Saying</h2>
@@ -71,4 +66,9 @@
          different designs and how we could incorapated it into OUR design. She really does
          put in that extra effort"</b><br />
       <i>Sarah Thompson</i></p>
+</div>
+<div class="imgRotorRight">
+  <%= image_tag "home04.jpg", class: "imgShow" %>
+  <%= image_tag "home05.jpg", class: "imgHide" %>
+  <%= image_tag "home06.jpg", class: "imgHide" %>
 </div>
