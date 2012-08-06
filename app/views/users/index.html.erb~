@@ -6,6 +6,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Password digest</th>
     <th></th>
     <th></th>
   </tr>

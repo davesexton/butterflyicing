@@ -1,9 +1,17 @@
 Butterflyicing::Application.routes.draw do
+
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   resources :users
 
-  #get "home/index"
+  get "home" => "home"
   match 'gallery/:cat' => 'gallery#index'
-  #match 'gallery/:cat/(:id)' => 'gallery#show'
   match 'gallery' => 'gallery#index'
   match 'ourcakes' => 'ourcakes#index'
   match 'weddings' => 'weddings#index'

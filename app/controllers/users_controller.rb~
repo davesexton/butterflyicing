@@ -85,7 +85,7 @@ class UsersController < ApplicationController
       flash[:notice] = e.message
     end
 
-   # @user.destroy
+    @user.destroy
 
     respond_to do |format|
       format.html { redirect_to users_url }

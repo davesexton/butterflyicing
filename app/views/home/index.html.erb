@@ -1,4 +1,7 @@
 <% @title = 'Home' %>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
 <div class="imgRotorLeft">
   <%= image_tag "home01.jpg", class: "imgShow", size: '246x369' %>
   <%= image_tag "home02.jpg", class: "imgHide", size: '246x369' %>

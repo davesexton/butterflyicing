@@ -68,7 +68,7 @@
       <i>Sarah Thompson</i></p>
 </div>
 <div class="imgRotorRight">
-  <%= image_tag "home04.jpg", class: "imgShow" %>
-  <%= image_tag "home05.jpg", class: "imgHide" %>
-  <%= image_tag "home06.jpg", class: "imgHide" %>
+  <%= image_tag "home04.jpg", class: "imgShow", size: '246x369' %>
+  <%= image_tag "home05.jpg", class: "imgHide", size: '246x369' %>
+  <%= image_tag "home06.jpg", class: "imgHide", size: '246x369' %>
 </div>

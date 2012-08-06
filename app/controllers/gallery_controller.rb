@@ -1,4 +1,6 @@
 class GalleryController < ApplicationController
+  skip_before_filter :authorize
+
   def index
     cat = params[:cat] ? params[:cat] : 'birthday'
     path = './app/assets/images/gallery/**'
