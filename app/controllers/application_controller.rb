@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
+
+      if User.count.zero?
+        user = User.create(:name => params[:name],
+                            :password => params[:password],
+                            :password_confirmation => params[:password])
+      end
       redirect_to login_url, notice: 'Please log in'
     end
   end
