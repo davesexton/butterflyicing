@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
+      session[:original_target] = request.url unless request.url =~ /admin/
 
       if User.count.zero?
         user = User.create(:name => params[:name],

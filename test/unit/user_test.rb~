@@ -69,7 +69,7 @@ class UserTest < ActiveSupport::TestCase
     user.password = 'Aa12345'
     user.password_confirmation = 'Aa12345'
     assert user.invalid?, 'short password allowed'
-    assert_equal 'must be at least 8 characters long',
+    assert_equal 'must be at least 8 characters longx',
                  user.errors[:password].join(';')
   end
 end
