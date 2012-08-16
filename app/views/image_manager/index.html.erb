@@ -1,0 +1,19 @@
+<% @title = 'Image Manager' %>
+<% if alert %>
+<p id="alert"><%= alert %></p>
+<% end %>
+
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+
+<h2>Image Manager</h2>
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= label_tag :category, 'Select category: ' %>
+  <%= select_tag :category, options_for_select(@cats), include_blank: true %>
+  <br />
+  <%= file_field_tag 'picture' %>
+  <br />
+  <%= submit_tag 'Upload Image' %>
+<% end %>

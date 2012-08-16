@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_gallery_categories
+    path = './app/assets/images/gallery/**'
+    Hash[*Dir[path].sort.collect do |d|
+      x = d.match('\w+$')[0]
+      [x.capitalize, "/gallery/#{x}"]
+    end.flatten]
+  end
+
 end

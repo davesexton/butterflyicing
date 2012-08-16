@@ -3,14 +3,9 @@ class GalleryController < ApplicationController
 
   def index
     cat = params[:cat] ? params[:cat] : 'birthday'
-    path = './app/assets/images/gallery/**'
-
-    @cats = Hash[*Dir[path].sort.collect do |d|
-      x = d.match('\w+$')[0]
-      [x.capitalize, "/gallery/#{x}"]
-    end.flatten]
 
     @cats_selected = cat
+    @cats = get_gallery_categories
 
     path = "./app/assets/images/gallery/#{cat}/*.jpg"
 

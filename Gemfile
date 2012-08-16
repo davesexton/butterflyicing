@@ -19,6 +19,7 @@ end
 
 gem 'jquery-rails'
 gem 'rmagick', '>= 2.13.1'
+gem 'debugger', group: [:development, :test]
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,5 +1,10 @@
 Butterflyicing::Application.routes.draw do
 
+  #get "image_manager/index"
+
+  #post "image_manager/upload"
+
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -7,6 +12,15 @@ Butterflyicing::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
+
+  get "image_manager" => "image_manager#index"
+  post "image_manager" => "image_manager#upload"
+
+  #match "image_manager" do
+  #  get:  'index'
+  #  post: 'upload'
+  #  delete: :destroy
+  #end
 
   resources :users
 
@@ -18,7 +32,7 @@ Butterflyicing::Application.routes.draw do
   match 'cookies' => 'cookies#index'
   match 'parties' => 'parties#index'
   match 'contactus' => 'contactus#index'
-  #resources :gallery
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
