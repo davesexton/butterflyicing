@@ -5,10 +5,8 @@ class ImageManagerController < ApplicationController
 
   def upload
     @cats = get_gallery_categories
-    unless params[:category]
-      flash.now[:alert] = 'No category selected, file upload cancelled'
-      render 'index'
-    else
+    if params[:picture] and params[:category]
+
       img = params[:picture]
       cat = params[:category]
       cat = cat.to_s.scan(/\w+$/)[0]
@@ -21,6 +19,10 @@ class ImageManagerController < ApplicationController
         f.write(img.read)
       end
       flash.now[:notice] = 'File uploaded'
+      render 'index'
+
+    else
+      flash.now[:alert] = 'No category or file selected, file upload cancelled'
       render 'index'
     end
   end

@@ -7,34 +7,36 @@ class ImageManagerControllerTest < ActionController::TestCase
   end
 
   test 'should upload file' do
+    require 'fileutils'
+
     folder = Rails.root.join('app', 'assets', 'images', 'gallery', 'test')
-    if Dir.exist?(folder)
-      Dir[File.join(folder, '*.*')].each{ |f| File.delete(f) }
-    else
-      Dir.mkdir(folder)
-    end
+
+    FileUtils.rm_rf folder if Dir.exist?(folder)
+    FileUtils.mkdir folder
+
     test_image = Rails.root.join('test', 'fixtures', 'files', 'test_image.jpg')
     file = Rack::Test::UploadedFile.new(test_image, "image/jpeg")
     post :upload, {picture: file, category: '/gallery/test'}
     assert_response :success
     assert_equal 1, Dir[File.join(folder, '*.jpg')].count, "no"
     assert_template :index
-    Dir[File.join(folder, '*.*')].each{ |f| File.delete(f) }
-    Dir.rmdir(folder)
 
+    FileUtils.rm_rf folder
 
+  end
 
-    #target_folder = Rails.root.join('app', 'assets', 'images', 'gallery', 'test', '*.jpg')
-    #target_count = Dir[File.join(target_folder)].count
-    #test_image = Rails.root.join('test', 'fixtures', 'files', 'test_image.jpg')
-    #file = Rack::Test::UploadedFile.new(test_image, "image/jpeg")
-    #post :upload, {picture: file, category: '/gallery/birthday'}
-    #assert_response :success
-    #assert_equal target_count + 1,
-    #             Dir[File.join(target_folder)].count
-    #assert_response :success
-    #assert_template :index
-    #File.delete(Dir['./app/assets/images/gallery/birthday/*.jpg'].sort_by{ |f| File.mtime(f) }.last)
+  test 'should handle no category selected' do
+    test_image = Rails.root.join('test', 'fixtures', 'files', 'test_image.jpg')
+    file = Rack::Test::UploadedFile.new(test_image, "image/jpeg")
+    post :upload, {picture: nil, category: nil}
+    assert_response :success
+    assert_template :index
+  end
+
+  test 'should handle no image selected' do
+    post :upload, {picture: nil, category: '/gallery/birthday'}
+    assert_response :success
+    assert_template :index
   end
 
 end
