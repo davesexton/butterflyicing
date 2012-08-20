@@ -2,7 +2,7 @@
 <% if alert %>
 <p id="alert"><%= alert %></p>
 <% end %>
-<%= debugger %>
+
 <% if notice %>
   <p class="notice"><%= notice %></p>
 <% end %>

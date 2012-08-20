@@ -17,12 +17,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
   def get_gallery_categories
     path = './app/assets/images/gallery/**'
     Hash[*Dir[path].sort.collect do |d|
       x = d.match('\w+$')[0]
       [x.capitalize, "/gallery/#{x}"]
     end.flatten]
+  end
+
+  def make_thumb path
+    require 'RMagick'
+    thumb = path.sub('gallery', 'gallery_thumbnail')
+    img = Magick::Image::read(path).first
+    img = img.crop_resized!(75, 75, Magick::NorthGravity)
+    #img = img.thumbnail(0.36)
+    img.write(thumb)
   end
 
 end

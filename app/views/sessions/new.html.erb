@@ -1,5 +1,5 @@
-<% if flash[:alert] %>
-<p id="notice"><%= flash[:alert] %></p>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, sanitize(value), :class => "flash #{key}") %>
 <% end %>
 
 <%= form_tag do %>

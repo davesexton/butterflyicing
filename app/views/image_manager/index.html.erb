@@ -1,10 +1,6 @@
 <% @title = 'Image Manager' %>
-<% if alert %>
-<p id="alert"><%= alert %></p>
-<% end %>
-
-<% if notice %>
-  <p class="notice"><%= notice %></p>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, sanitize(value), :class => "flash #{key}") %>
 <% end %>
 
 <h2>Image Manager</h2>

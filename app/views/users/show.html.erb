@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, sanitize(value), :class => "flash #{key}") %>
+<% end %>
 
 <p>
   <b>Name:</b>

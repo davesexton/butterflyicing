@@ -20,13 +20,4 @@ class GalleryController < ApplicationController
     end
   end
 
-  private
-  def make_thumb path
-    require 'RMagick'
-    thumb = path.sub('gallery', 'gallery_thumbnail')
-    img = Magick::Image::read(path).first
-    img = img.crop_resized!(75, 75, Magick::NorthGravity)
-    #img = img.thumbnail(0.36)
-    img.write(thumb)
-  end
 end
