@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html<%= APP_CONFIG['ga_id''] ? ' data-web_property_id="UA-6202697-3"' : ''%>>
 <head>
-  <title>Butterfly Icing<%= @title %></title>
+  <title>Butterfly Icing<%= ' - ' + @title unless @title == nil %></title>
   <%= stylesheet_link_tag    "application" %>
   <!--[if lte IE 8]>
     <%= stylesheet_link_tag    "ie" %>
@@ -19,32 +19,25 @@
     <ul>
       <li>
         <%= link_to_unless controller.controller_name == 'home',
-            "Home",
-            url_for(controller: 'home', action: 'index') %>
+            "Home", '/' %>
       </li>
       <li><%= link_to_unless controller.controller_name == 'ourcakes',
-           "Our Cakes",
-            url_for(controller: 'ourcakes', action: 'index')  %>
+           "Our Cakes", '/ourcakes' %>
       </li>
       <li><%= link_to_unless  controller.controller_name == 'gallery',
-           "Gallery",
-            url_for(controller: 'gallery', action: 'index')  %>
+           "Gallery", '/gallery/birthday' %>
       </li>
       <li><%= link_to_unless controller.controller_name == 'weddings',
-            "Weddings",
-            url_for(controller: 'weddings', action: 'index')  %>
+            "Weddings", '/weddings' %>
       </li>
       <li><%= link_to_unless  controller.controller_name == 'cookies',
-            "Cookies",
-            url_for(controller: 'cookies', action: 'index')  %>
+            "Cookies", '/cookies' %>
       </li>
       <li><%= link_to_unless  controller.controller_name == 'parties',
-            "Parties",
-            url_for(controller: 'parties', action: 'index')  %>
+            "Parties", '/parties' %>
       </li>
       <li><%= link_to_unless  controller.controller_name == 'contactus',
-            "Contact Us",
-            url_for(controller: 'contactus', action: 'index')  %>
+            "Contact Us", '/contactus' %>
       </li>
     </ul>
   </nav>
