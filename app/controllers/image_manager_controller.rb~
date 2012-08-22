@@ -5,7 +5,7 @@ class ImageManagerController < ApplicationController
 #TODO create hash for all images
     get_gallery_categories.map {|k, v| v }.each do |v|
       path = "./app/assets/images#{v}/*.jpg"
-      puts path
+      #puts path
     end
 
     #path = "./app/assets/images/gallery/#{cat}/*.jpg"

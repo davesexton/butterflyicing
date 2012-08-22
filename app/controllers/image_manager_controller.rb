@@ -35,8 +35,6 @@ class ImageManagerController < ApplicationController
           img = Magick::Image::read(img.local_path).first
         end
 
-        #img = Magick::Image.from_blob(params[:picture].read).first
-
         cat = params[:category]
         cat = cat.to_s.scan(/\w+$/)[0]
         folder = Rails.root.join('app', 'assets', 'images', 'gallery', cat)

@@ -13,14 +13,11 @@ Butterflyicing::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  get "image_manager" => "image_manager#index"
-  post "image_manager" => "image_manager#upload"
+  get 'image_manager' => "image_manager#index"
+  post 'image_manager' => "image_manager#upload"
 
-  #match "image_manager" do
-  #  get:  'index'
-  #  post: 'upload'
-  #  delete: :destroy
-  #end
+  get 'contactus' => 'contactus#index'
+  post "contactus" => "contactus#send_message"
 
   resources :users
 
