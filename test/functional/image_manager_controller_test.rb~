@@ -55,6 +55,12 @@ class ImageManagerControllerTest < ActionController::TestCase
   img = Magick::Image::read(folder.join('1.jpg')).first
   assert_equal 640, img.columns
 
+  img = Magick::Image::read(folder.join('2.jpg')).first
+  assert_equal 640, img.columns
+
+  img = Magick::Image::read(folder.join('3.jpg')).first
+  assert_equal 640, img.columns
+
 # remove test folder
     #FileUtils.rm_rf folder
 

@@ -446,7 +446,21 @@ $marginwidth: 10px;
 .column {
   @include column;
 }
-
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
+}
+@mixin linear-gradient($angle, $colorstop1, $colorstop2) {
+  -webkit-linear-gradient: $angle $colorstop1 $colorstop2;
+  -moz-linear-gradient: $angle $colorstop1 $colorstop2;
+  linear-gradient: $angle $colorstop1 $colorstop2;
+}
 @mixin span($size) {
   @if $size < 1 {$size: 1}
   @if $size > 24 {$size: 24}
@@ -488,7 +502,7 @@ $marginwidth: 10px;
   }
 }
 @mixin textarea-span($size) {
- @include input-span($size);
+  @include input-span($size);
 }
 
 @for $i from 1 through 24 {

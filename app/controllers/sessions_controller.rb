@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_name(params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      #redirect_to admin_url
+
       if(session[:original_target])
         redirect_to session[:original_target]
       else
@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-#TODO stop users from destroying themselves
     session[:user_id] = nil
     redirect_to root_url, notice: "Logged out"
   end

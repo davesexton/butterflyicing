@@ -4,21 +4,11 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.order(:name)
+    @current_user = session[:user_id]
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
-    end
-  end
-
-  # GET /users/1
-  # GET /users/1.json
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
     end
   end
 
@@ -46,7 +36,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url,
-                      notice: 'User #{@user.name} was successfully created.' }
+                      notice: "User #{@user.name} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -64,7 +54,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to users_url,
-                      notice: 'User #{@user.name} was successfully updated.' }
+                      notice: "User #{@user.name} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,13 +69,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     begin
-      @user.destroy
-      flash[:notice] = "User #{@user.name} deleted"
+      if session[:user_id] != @user.id
+        @user.destroy
+        flash[:notice] = "User #{@user.name} deleted"
+      else
+        flash[:alert] = "User #{@user.name} was not deleted - you can't delete yourself"
+      end
     rescue Exception => e
       flash[:notice] = e.message
     end
-
-   # @user.destroy
 
     respond_to do |format|
       format.html { redirect_to users_url }

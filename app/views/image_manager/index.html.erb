@@ -6,10 +6,11 @@
 <h2>Image Manager</h2>
 
 <%= form_tag({action: :upload}, multipart: true) do %>
-  <%= label_tag :category, 'Select category: ' %>
-  <%= select_tag :category, options_for_select(@cats), include_blank: true %>
+  <%= label_tag 'category', 'Select category: ' %>
+  <%= select_tag 'category', options_for_select(@cats), include_blank: true, size: '1x20' %>
   <br />
-  <%= file_field_tag 'picture' %>
+  <%= label_tag 'picture', 'Select image file: ' %>
+  <%= file_field_tag 'picture', size: 5 %>
   <br />
   <%= submit_tag 'Upload Image' %>
 <% end %>

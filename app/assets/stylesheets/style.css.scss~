@@ -19,6 +19,15 @@ b {
 body {
   background-image: url('flower_pattern.jpg');
 }
+input, textarea {
+    border: 1px solid #888;
+    margin: 4px 0 4px 0;
+    padding: 4px;
+    @include border-radius(4px);
+    @include box-shadow(0px, 0px, 5px, #888);
+    background: -webkit-linear-gradient(bottom,  #fff,  #ddd);
+    background: -moz-linear-gradient(bottom,  #fff,  #ddd);
+}
 header {
   @include prepend(1);
   @include span(22);
@@ -142,7 +151,7 @@ h2 {
   @include last;
 }
 .columnRight {
-  @include span(1);
+  @include span(13);
   @include last;
 }
 .columnLeft {
@@ -151,6 +160,7 @@ h2 {
 label {
   width: 129px;
   display: inline-block;
+  font-size: 1.1em;
 }
 $picturewidth: 100px;
 $pictureheight: 100px;

@@ -1,5 +1,4 @@
 class ContactusController < ApplicationController
-#TODO add contact us page logic
   skip_before_filter :authorize
 
   def index
@@ -16,4 +15,4 @@ class ContactusController < ApplicationController
     end
     redirect_to contactus_path
   end
-end
+ends

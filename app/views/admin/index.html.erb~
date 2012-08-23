@@ -1,3 +1,9 @@
-<h1>Admin#index</h1>
+<% @title = 'Admin' %>
+<h2>Website Administration</h2>
+<% flash.each do |key, value| %>
+<%= content_tag(:div, sanitize(value), :class => "flash #{key}") %>
+<% end %>
 <p>Find me in app/views/admin/index.html.erb</p>
-<%= link_to 'Log out', logout_url, method: :delete  %>
+<p><%= link_to 'Website Performance', APP_CONFIG['ga_link']  %></p>
+<p><%= link_to 'Manage Images', image_manager_path %></p>
+<p><%= link_to 'Log Out', logout_url, method: :delete  %></p>

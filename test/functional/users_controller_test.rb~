@@ -5,9 +5,10 @@ class UsersControllerTest < ActionController::TestCase
     @input_attributes = {
       name: 'userfred',
       password: 'secret1A',
-      password_confirmation: 'secret'
+      password_confirmation: 'secret1A'
     }
-    @user = users(:one)
+    @user1 = users(:one)
+    @user2 = users(:two)
   end
 
   test "should get index" do
@@ -28,26 +29,30 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to users_path
   end
 
-  test "should show user" do
-    get :show, id: @user
-    assert_response :success
-  end
-
   test "should get edit" do
-    get :edit, id: @user
+    get :edit, id: @user1
     assert_response :success
   end
 
   test "should update user" do
-    put :update, id: @user, user: @input_attributes
+    put :update, id: @user1, user: @input_attributes
     assert_redirected_to users_path
   end
 
   test "should destroy user" do
     assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+      delete :destroy, id: @user2
     end
 
     assert_redirected_to users_path
   end
+
+  test "should user cannot destroy themselves " do
+    assert_difference('User.count', 0) do
+      delete :destroy, id: @user1
+    end
+
+    assert_redirected_to users_path
+  end
+
 end
