@@ -38,3 +38,8 @@ group :test do
 #  gem 'minitest'
 #  gem 'turn', :require => false
 end
+
+group :development do
+  gem 'wirble'
+  gem 'hirb'
+end
