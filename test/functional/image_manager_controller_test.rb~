@@ -62,7 +62,7 @@ class ImageManagerControllerTest < ActionController::TestCase
   assert_equal 640, img.columns
 
 # remove test folder
-    #FileUtils.rm_rf folder
+    FileUtils.rm_rf folder
 
   end
 

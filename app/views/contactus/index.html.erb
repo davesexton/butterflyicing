@@ -28,6 +28,7 @@
     </ul>
   </div>
 <% end %>
+<a name="contactForm">
 <%= form_for @message, url: contactus_path do |f| %>
   <%= f.label :name, 'Your name:' %>
   <%= f.text_field :name, size: 25 %><br />
