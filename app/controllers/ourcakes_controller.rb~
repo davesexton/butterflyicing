@@ -1,8 +1,0 @@
-class OurcakesController < ApplicationController
-#TODO remove email address from view and add link to contact us
-  skip_before_filter :authorize
-
-  def index
-  end
-
-end
