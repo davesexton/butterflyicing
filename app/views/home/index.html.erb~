@@ -1,11 +1,14 @@
 <% @title = 'Home' %>
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
 <div class="imgRotorLeft">
   <%= image_tag "home01.jpg", class: "imgShow", size: '246x369' %>
   <%= image_tag "home02.jpg", class: "imgHide", size: '246x369' %>
   <%= image_tag "home03.jpg", class: "imgHide", size: '246x369' %>
 </div>
 <div class="columnRiight">
-  <h1>Welcome to Butterfly Icing</h1>
+  <h2>Welcome to Butterfly Icing</h2>
   <p>Looking for the perfect cake for the perfect occasion then we can help. Our dedicated
      staff are on hand to help with gathering ideas, design and production of the cake.</p>
   <p>A cake should be made perfectly for your occasion which is what we guarantee. We

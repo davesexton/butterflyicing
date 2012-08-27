@@ -42,6 +42,11 @@
     </ul>
   </nav>
   <section>
+    <% flash.each do |key, value| %>
+      <div id="flashHolder">
+        <%= content_tag(:div, sanitize(value), class: "flash #{key}", id: 'flashMessage') %>
+      </div>
+    <% end %>
     <%= yield %>
   </section>
   <footer>

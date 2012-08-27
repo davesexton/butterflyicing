@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html<%= APP_CONFIG['ga_id''] ? ' data-web_property_id="UA-6202697-3"' : ''%>>
+<html<%= APP_CONFIG['ga_id'] ? ' data-web_property_id="UA-6202697-3"' : ''%>>
 <head>
   <title>Butterfly Icing<%= ' - ' + @title unless @title == nil %></title>
   <%= stylesheet_link_tag    "application" %>
@@ -42,6 +42,11 @@
     </ul>
   </nav>
   <section>
+    <% flash.each do |key, value| %>
+      <div>
+        <%= content_tag(:div, sanitize(value), class: "flash #{key}", id: 'flashMessage') %>
+      </div>
+    <% end %>
     <%= yield %>
   </section>
   <footer>

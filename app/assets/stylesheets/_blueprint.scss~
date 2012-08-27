@@ -327,11 +327,29 @@ form.inline {
     margin-bottom: 0;
   }
 }
+
+#flashMessage {
+  position: absolute;
+  display: none;
+  width: 770px;
+  top: 5px;
+  left: 5px;
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  box-shadow: 5px 5px 5px #888;
+  @include border-radius(4px);
+}
+
+#flashHolder {
+  position: relative;
+}
+
 .a {
   padding: 0.8em;
   margin-bottom: 1em;
   border: 2px solid #ddd;
 }
+
 .error, .alert {
   @extend .a;
   background: #fbe3e4;
@@ -386,6 +404,7 @@ form.inline {
 .container {
   @include container;
 }
+
 @mixin showgrid {
   background-image: url(grid.png);
 }

@@ -15,6 +15,12 @@ swapImages = (id) ->
 setInterval ->
   swapImages "imgRotorLeft"
 , 5000
+
 setInterval ->
   swapImages "imgRotorRight"
 , 5000
+
+$ ->
+  $('#flashMessage').delay(500).fadeIn('normal', ->
+    $(@).delay(4000).fadeOut()
+  )

@@ -9,16 +9,20 @@ $textcolor: #222222;
   font-family: Verdana;
   color: $textcolor;
 }
+
 p {
   font-family: Verdana;
   font-size: 1em;
 }
+
 b {
   color: $pinkcolor;
 }
+
 body {
   background-image: url('flower_pattern.jpg');
 }
+
 input, textarea, select {
     border: 1px solid #888;
     margin: 4px 0 4px 0;
@@ -28,6 +32,7 @@ input, textarea, select {
     background: -webkit-linear-gradient(bottom,  #fff,  #ddd);
     background: -moz-linear-gradient(bottom,  #fff,  #ddd);
 }
+
 header {
   @include prepend(1);
   @include span(22);
@@ -46,6 +51,7 @@ header {
     border: none;
   }
 }
+
 nav {
   @include prepend(1);
   @include span(22);
@@ -59,8 +65,8 @@ nav {
     size: 16px;
     weight: bold;
   }
-  height: 43px;
-  min-height: 43px;
+  height: 42px;
+  min-height: 42px;
   padding: {
     top: 0px;
     left: 150px;
@@ -86,9 +92,11 @@ nav {
     }
   }
 }
+
 .menuSelected {
-        color: #FF0000;
-      }
+  color: #FF0000;
+}
+
 section {
   @include prepend(2);
   @include span(20);
@@ -97,6 +105,7 @@ section {
   background-image: url('content_background.png');
   min-height: 600px;
 }
+
 footer {
   @include span(24);
   @include last;
@@ -109,27 +118,32 @@ footer {
   min-height: 60px;
   padding-top: 10px;
 }
+
 h1 {
   color: $pinkcolor;
-  font-size: 2em;
+  font-size: 1.5em;
   margin {
     bottom: 0.25em;
     top: 2.50em;
   }
   border-bottom: solid 1px $pinkcolor;
 }
+
 h2 {
   color: $bluecolor;
   font-size: 1.75em;
   margin-bottom: 0.25em;
   border-bottom: solid 1px $bluecolor;
 }
+
 .imgHide {
   display: none;
 }
+
 .imgShow {
   display: block;
 }
+
 .imgRotorLeft {
   /* float: left;
   height: 369px;
@@ -140,6 +154,7 @@ h2 {
   margin-color: #FFFFFF;
   @include span(7);
 }
+
 .imgRotorRight {
   /* float: right;
   height: 369px;
@@ -150,20 +165,25 @@ h2 {
   @include span(7);
   @include last;
 }
+
 .columnRight {
   @include span(13);
   @include last;
 }
+
 .columnLeft {
   @include span(13);
 }
+
 label {
   width: 129px;
-  display: inline-block;
+  #display: inline-block;
   font-size: 1.1em;
 }
+
 $picturewidth: 100px;
 $pictureheight: 100px;
+
 .gallery {
   #galleryDisplay {
     @include span(17);
@@ -215,5 +235,19 @@ $pictureheight: 100px;
         text-align: center;
       }
     }
+  }
+}
+
+.image_manager {
+  .imgHolder {
+    width: 80px;
+    position: relative;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    margin: 1px;
+  }
+  h2 {
+    clear: both;
   }
 }

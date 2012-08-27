@@ -27,6 +27,21 @@ class ApplicationController < ActionController::Base
     end.flatten]
   end
 
+  def get_all_pics
+    path = "./app/assets/images/gallery/**/*.jpg"
+
+    Dir[path].sort_by{ |i| i.match('\d+')[0].to_i }.collect do |f|
+      make_thumb f unless FileTest.exist?(f.sub('gallery', 'gallery_thumbnail'))
+      idx = f.match('\d+')[0]
+      pic = Hash.new(0)
+      cat = f.match('\w+(?=/\d+\.jpg$)')[0]
+      pic[:thumb_url] = "/assets/gallery_thumbnail/#{cat}/#{idx}.jpg"
+      pic[:image_url] = "/assets/gallery/#{cat}/#{idx}.jpg"
+      pic[:category] = cat
+      pic
+    end
+  end
+
   def make_thumb path
     require 'RMagick'
     thumb = path.sub('gallery', 'gallery_thumbnail')

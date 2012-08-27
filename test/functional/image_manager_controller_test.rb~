@@ -11,8 +11,6 @@ class ImageManagerControllerTest < ActionController::TestCase
     require 'RMagick'
 
 #TODO add test for flash messages
-#TODO add test for resizing large sized image
-#TODO add test for resizing small sized image
     folder = Rails.root.join('app', 'assets', 'images', 'gallery', 'test')
 
 # remove test category folder is exists and recreate

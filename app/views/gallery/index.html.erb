@@ -13,6 +13,6 @@
 
 <div id="galleryDisplay">
   <% @pics.each do |pic| %>
-    <%= link_to(image_tag(pic['thumb_url'], {size: '75x75'}), pic['image_url']) %>
+    <%= link_to(image_tag(pic[:thumb_url], {size: '75x75'}), pic[:image_url]) %>
   <% end %>
 </div>

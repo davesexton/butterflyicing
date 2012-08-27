@@ -327,47 +327,7 @@ form.inline {
     margin-bottom: 0;
   }
 }
-.a {
-  padding: 0.8em;
-  margin-bottom: 1em;
-  border: 2px solid #ddd;
-}
-.error, .alert {
-  @extend .a;
-  background: #fbe3e4;
-  color: #8a1f11;
-  border-color: #fbc2c4;
-  & a {
-    color: #8a1f11;
-  }
-}
-.notice {
-  @extend .a;
-  background: #fff6bf;
-  color: #514721;
-  border-color: #ffd324;
-  & a {
-    color: #514721;
-  }
-}
-.success {
-  @extend .a;
-  background: #e6efc2;
-  color: #264409;
-  border-color: #c6d880;
-  & a {
-    color: #264409;
-  }
-}
-.info {
-  @extend .a;
-  background: #d5edf8;
-  color: #205791;
-  border-color: #92cae4;
-  & a {
-    color: #205791;
-  }
-}
+
 
 /* grid.css */
 @mixin container {
@@ -386,6 +346,7 @@ form.inline {
 .container {
   @include container;
 }
+
 @mixin showgrid {
   background-image: url(grid.png);
 }
@@ -557,5 +518,64 @@ hr {
     background: #fff;
     color: #fff;
     visibility: hidden;
+  }
+}
+
+#flashMessage {
+  position: absolute;
+  display: none;
+  width: 770px;
+  top: 5px;
+  left: 5px;
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  box-shadow: 5px 5px 5px #888;
+  @include border-radius(4px);
+}
+
+#flashHolder {
+  position: relative;
+}
+
+.a {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+}
+
+.error, .alert {
+  @extend .a;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+  & a {
+    color: #8a1f11;
+  }
+}
+.notice {
+  @extend .a;
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324;
+  & a {
+    color: #514721;
+  }
+}
+.success {
+  @extend .a;
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880;
+  & a {
+    color: #264409;
+  }
+}
+.info {
+  @extend .a;
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4;
+  & a {
+    color: #205791;
   }
 }

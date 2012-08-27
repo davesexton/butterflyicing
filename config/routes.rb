@@ -15,6 +15,7 @@ Butterflyicing::Application.routes.draw do
 
   get 'image_manager' => "image_manager#index"
   post 'image_manager' => "image_manager#upload"
+  delete 'image_manager' => "image_manager#delete"
 
   get 'contactus' => 'contactus#index'
   post "contactus" => "contactus#send_message"
