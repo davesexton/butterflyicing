@@ -52,7 +52,6 @@ class ImageManagerController < ApplicationController
     File.delete(path.join('gallery').join(cat).join(img))
     File.delete(path.join('gallery_thumbnail').join(cat).join(img))
 
-    #flash[:notice] = 'Image deleted'
     redirect_to image_manager_path, notice: 'Image deleted'
   end
 
