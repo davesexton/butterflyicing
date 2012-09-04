@@ -1,10 +1,5 @@
 Butterflyicing::Application.routes.draw do
 
-  #get "image_manager/index"
-
-  #post "image_manager/upload"
-
-
   get 'admin' => 'admin#index'
 
   controller :sessions do

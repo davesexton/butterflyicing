@@ -6,10 +6,6 @@ class User < ActiveRecord::Base
                    format: {with: /(?=[a-zA-Z]{6,})/,
                             message: 'must be at least 6 characters and contain only upper and lowercase letters'
                    }
-#  validates :password, format: {
-#    with: /^.*(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[\d]).*$/,
-#    message: 'must be ay least 8 characters long and contain at least one uppercase letter, one lowercase letter and one digit'
-#  }
 
   validates :password, format: {
     with: /^.*(?=.{8,}).*$/,
