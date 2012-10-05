@@ -11,7 +11,7 @@ class ImageManagerController < ApplicationController
 
     @cats = get_gallery_categories
     @pics = get_all_pics
-#debugger
+
     if params[:picture] and params[:category]
 
       img = params[:picture]
@@ -19,14 +19,8 @@ class ImageManagerController < ApplicationController
         require 'RMagick'
         require 'fileutils'
 
-        #if img.is_a?(StringIO)
         img.rewind
         img = Magick::Image::from_blob(img.read).first
-        #if img.kind_of? StringIO
-        #  img = Magick::Image::from_blob(img.string).first
-        #else
-        #  img = Magick::Image::read(img.local_path).first
-        #end
 
         cat = params[:category]
         cat = cat.to_s.scan(/\w+$/)[0]

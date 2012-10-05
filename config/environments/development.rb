@@ -36,15 +36,15 @@ Butterflyicing::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.delivery_method = :smtp
+  smtp_settings = YAML.load_file(Rails.root.join('config').join('config.yml'))[Rails.env]['mailer']
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "butterflyicing.co.uk",
-    authentication: "plain",
-    user_name: "davesexton1@googlemail.com",
-    password: "psionpsionz",
-    enable_starttls_auto: true
+    address: smtp_settings['address'],
+    port: smtp_settings['port'],
+    domain: smtp_settings['domain'],
+    authentication: smtp_settings['authentication'],
+    user_name: smtp_settings['user_name'],
+    password: smtp_settings['password'],
+    enable_starttls_auto: smtp_settings['enable_starttls_auto']
     }
-
 
 end
