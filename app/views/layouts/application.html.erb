@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html<%= APP_CONFIG['ga_id'] ? ' data-web_property_id="UA-6202697-3"' : ''%>>
+<%= tag(:html, ({data: {web_property_id: APP_CONFIG['ga_id']}} if APP_CONFIG['ga_id'] ), true) %>
 <head>
+  <% if @description %>
+    <meta name="description" content="<%= @description %>">
+    <meta name="keywords" content="cakes,cake,cupcakes,cupcake,birthday cakes,birthday cake,wedding cake,wedding cakes,party,parties,cookie,coookies,children's party">
+  <% end %>
+  <meta name="author" content="Dave Sexton">
   <title>Butterfly Icing<%= ' - ' + @title unless @title == nil %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <!--[if lte IE 8]>
-    <%= stylesheet_link_tag    "ie" %>
-  <![endif]-->
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>

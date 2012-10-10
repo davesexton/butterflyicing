@@ -1,8 +1,8 @@
 var _gaq = _gaq || [];
 
 $(document).ready(function() {
-  var web_property_id = $('html').attr('data-web_property_id');
-
+  var web_property_id = $('html').attr('data-web-property-id');
+  console.log(web_property_id);
   if ((typeof web_property_id) != 'undefined') {
     _gaq.push(['_setAccount', web_property_id]);
     _gaq.push(['_trackPageview']);
