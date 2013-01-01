@@ -4,5 +4,6 @@ log/*.log
 tmp/
 .sass-cache/
 config/config.yml
+config/database.yml
 *~
 *.*~
