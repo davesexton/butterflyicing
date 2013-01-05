@@ -7,3 +7,5 @@ config/config.yml
 config/database.yml
 *~
 *.*~
+public/gallery/
+public/gallery_thumbnail/
