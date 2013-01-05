@@ -11,7 +11,7 @@ class ImageManagerControllerTest < ActionController::TestCase
     require 'RMagick'
 
 #TODO add test for flash messages
-    folder = Rails.root.join('app', 'assets', 'images', 'gallery', 'test')
+    folder = Rails.root.join('public', 'gallery', 'test')
 
 # remove test category folder is exists and recreate
     FileUtils.rm_rf folder if Dir.exist?(folder)
@@ -21,8 +21,7 @@ class ImageManagerControllerTest < ActionController::TestCase
     test_image = Rails.root.join('test', 'fixtures', 'files', 'test_image.jpg')
     file = Rack::Test::UploadedFile.new(test_image, "image/jpeg")
     post :upload, {picture: file, category: '/gallery/test'}
-    assert_response :success
-    assert_template :index
+    assert_redirected_to image_manager_path
     assert_equal 1, Dir[File.join(folder, '*.jpg')].count
 
 # post upload with large image
@@ -68,14 +67,16 @@ class ImageManagerControllerTest < ActionController::TestCase
     test_image = Rails.root.join('test', 'fixtures', 'files', 'test_image.jpg')
     file = Rack::Test::UploadedFile.new(test_image, "image/jpeg")
     post :upload, {picture: nil, category: nil}
-    assert_response :success
-    assert_template :index
+    #assert_response :success
+    #assert_template :index
+    assert_redirected_to image_manager_path
   end
 
   test 'should handle no image selected' do
     post :upload, {picture: nil, category: '/gallery/birthday'}
-    assert_response :success
-    assert_template :index
+    #assert_response :success
+    #assert_template :index
+    assert_redirected_to image_manager_path
   end
 
 end
