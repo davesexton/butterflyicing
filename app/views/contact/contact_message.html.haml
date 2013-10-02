@@ -1,0 +1,11 @@
+%b Comment recieved through Butterfly Icing website
+%p
+  %b From:
+  = @message.name
+%p
+  %b Email:
+  = link_to @message.email, "mailto:#{@message.email}"
+%p
+  %b Message:
+%p
+  = @message.message

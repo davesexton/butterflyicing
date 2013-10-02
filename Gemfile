@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -11,15 +11,18 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
+  gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
 
   gem 'uglifier', '>= 1.3.0'
 end
 
 gem 'jquery-rails'
-gem 'rmagick', '>= 2.13.1'
+gem 'rmagick', '>= 2.13.2'
 gem 'debugger', group: [:development, :test]
+
+gem 'haml'
+gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.1'
@@ -39,7 +42,7 @@ group :test do
 #  gem 'turn', :require => false
 end
 
-group :development do
+group :development, :production do
   gem 'wirble'
   gem 'hirb'
 end

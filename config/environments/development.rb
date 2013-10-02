@@ -2,7 +2,7 @@ Butterflyicing::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
-  # every request.  This slows down response time but is perfect for development
+  # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
@@ -22,12 +22,6 @@ Butterflyicing::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  # Do not compress assets
-  config.assets.compress = false
-
-  # Expands the lines which load the assets
-  config.assets.debug = true
-
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
@@ -35,8 +29,14 @@ Butterflyicing::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  # Do not compress assets
+  config.assets.compress = false
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+
   config.action_mailer.delivery_method = :smtp
-  smtp_settings = YAML.load_file(Rails.root.join('config').join('config.yml'))[Rails.env]['mailer']
+  smtp_settings = YAML.load_file(Rails.root.join('config','config.yml'))[Rails.env]['mailer']
   config.action_mailer.smtp_settings = {
     address: smtp_settings['address'],
     port: smtp_settings['port'],
@@ -46,5 +46,4 @@ Butterflyicing::Application.configure do
     password: smtp_settings['password'],
     enable_starttls_auto: smtp_settings['enable_starttls_auto']
     }
-
 end

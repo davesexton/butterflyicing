@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessible :name, :password, :password_confirmation, :password_digest
+
 #TODO add reset on next login
 #TODO add email field
   validates :name, presence: true,

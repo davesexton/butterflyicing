@@ -18,13 +18,13 @@ Butterflyicing::Application.routes.draw do
   resources :users
 
   get "home" => "home"
-  match 'gallery/:cat' => 'gallery#index'
-  match 'gallery' => 'gallery#index'
-  match 'ourcakes' => 'ourcakes#index'
-  match 'weddings' => 'weddings#index'
-  match 'cookies' => 'cookies#index'
-  match 'parties' => 'parties#index'
-  match 'contactus' => 'contactus#index'
+  get 'gallery/:cat' => 'gallery#index'
+  get 'gallery' => 'gallery#index'
+  get 'ourcakes' => 'ourcakes#index'
+  get 'weddings' => 'weddings#index'
+  get 'cookies' => 'cookies#index'
+  get 'parties' => 'parties#index'
+  get 'contactus' => 'contactus#index'
 
   root :to => 'home#index'
 

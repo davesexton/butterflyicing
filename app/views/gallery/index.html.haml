@@ -1,0 +1,16 @@
+- @title = 'Gallery'
+
+%h2 Image Gallery
+%p
+  Click the links on the left to filter by category, click the thunbnail images
+  below to view the full size image.
+
+%div#galleryIndex
+  - @cats.each do |k, v|
+    %div
+      = link_to_unless_current k, v
+
+%div#galleryDisplay
+  - @pics.each do |pic|
+    = link_to(image_tag(pic[:thumb_url], {size: '75x75'}), pic[:image_url])
+
