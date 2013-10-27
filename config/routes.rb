@@ -1,5 +1,10 @@
 Butterflyicing::Application.routes.draw do
 
+  resources :gallery_images
+  resources :tags
+  resources :tag_groups
+  resources :users
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -8,18 +13,13 @@ Butterflyicing::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  get 'image_manager' => "image_manager#index"
-  post 'image_manager' => "image_manager#upload"
-  delete 'image_manager' => "image_manager#delete"
-
+  get 'image_manager' => 'image_manager#index'
+  post 'image_manager' => 'image_manager#upload'
+  delete 'image_manager' => 'image_manager#delete'
   get 'contactus' => 'contactus#index'
-  post "contactus" => "contactus#send_message"
-
-  resources :users
-
-  get "home" => "home"
-  get 'gallery/:cat' => 'gallery#index'
-  get 'gallery' => 'gallery#index'
+  post 'contactus' => 'contactus#send_message'
+  get 'home' => 'home'
+  get 'gallery/(:id)' => 'gallery#index' , as: :gallery
   get 'ourcakes' => 'ourcakes#index'
   get 'weddings' => 'weddings#index'
   get 'cookies' => 'cookies#index'

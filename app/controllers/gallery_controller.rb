@@ -2,27 +2,21 @@ class GalleryController < ApplicationController
   skip_before_filter :authorize
 
   def index
-    cat = params[:cat] ? params[:cat] : 'birthday'
 
-    @cats_selected = cat
-    @cats = get_gallery_categories
+    redirect_to gallery_path(Tag.first.id) unless params[:id]
+#    tg = Tag.includes(:gallery_images)
+#            .group('tags.id')
+#            .having('COUNT(gallery_images.id) > 0').map{|t| t.tag_group_id}
+#    @tag_groups = TagGroup.find(tg)
 
-    #path = "./app/assets/images/gallery/#{cat}/*.jpg"
-    path = Rails.root.join('public', 'gallery', cat, '*.jpg')
+    @tags = Tag.includes(:gallery_images)
+               .group('tags.id')
+               .having('COUNT(gallery_images.id) > 0')
 
-    @pics = Dir[path].sort_by{ |i| i.match('\d+(?=\.jpg$)')[0].to_i }.collect do |f|
-      make_thumb f unless FileTest.exist?(f.sub('gallery', 'gallery_thumbnail'))
-      idx = f.match('\d+(?=\.jpg$)')[0]
+    @tag_groups = TagGroup.find(@tags.map{|t| t.tag_group_id})
 
-      pic = Hash.new(0)
-      #pic[:thumb_url] = "/assets/gallery_thumbnail/#{cat}/#{idx}.jpg"
-      #pic[:image_url] = "/assets/gallery/#{cat}/#{idx}.jpg"
+    @gallery_images = GalleryImage.where('tag_id = ?', params[:id])
 
-      pic[:thumb_url] = "/gallery_thumbnail/#{cat}/#{idx}.jpg"
-      pic[:image_url] = "/gallery/#{cat}/#{idx}.jpg"
-
-      pic
-    end
   end
 
 end

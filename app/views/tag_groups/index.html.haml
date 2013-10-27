@@ -1,0 +1,19 @@
+%h1 Listing tag_groups
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+
+  - @tag_groups.each do |tag_group|
+    %tr
+      %td= tag_group.title
+      %td= link_to 'Edit', edit_tag_group_path(tag_group)
+      %td= link_to 'Destroy', tag_group,
+                              method: :delete,
+                              data: { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tag group', new_tag_group_path

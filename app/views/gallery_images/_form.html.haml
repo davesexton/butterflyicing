@@ -1,0 +1,18 @@
+= form_for @gallery_image, nultipart: true do |f|
+  - if @gallery_image.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gallery_image.errors.count,
+        "error")} prohibited this gallery_image from being saved:"
+      %ul
+        - @gallery_image.errors.full_messages.each do |msg|
+          %li= msg
+
+  %div.field
+    = f.label :image, 'Select image file: '
+    = f.file_field :image, size: 5
+  %div.field
+    = f.label :tag_id, 'Select category: '
+    = f.grouped_collection_select(:tag_id, @tag_groups,
+      :tags, :title, :id, :title, {selected: f.object.tag_id})
+  %div.actions
+    = f.submit 'Upload'

@@ -1,0 +1,23 @@
+- @title = 'Image Manager'
+%h2 Image Manager
+%p
+  Use the file selector below to pick an image you want to upload, make
+  sure that use the drop-down to select which category you want the image
+  displayed under. To remove an image click the link below it from the display below.
+
+%div
+  = render 'form'
+
+%div#galleryDisplay
+  - @gallery_images.sort{|a,b| a.tag.title <=> b.tag.title}.each do |gallery_image|
+    %div.galleryItem
+      = link_to(image_tag(gallery_image.thumbnail_path,
+        {size: '100x100'}),
+        gallery_image.image_path, class: 'lightBox')
+      %br
+      %td= link_to 'Remove', gallery_image,
+        method: :delete,
+        data: { confirm: 'Are you sure?' }
+      = form_for gallery_image, remote: true do |f|
+        = f.grouped_collection_select :tag_id, @tag_groups,
+          :tags, :title, :id, :title, {selected: f.object.tag_id}

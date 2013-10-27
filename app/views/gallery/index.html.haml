@@ -6,11 +6,18 @@
   below to view the full size image.
 
 %div#galleryIndex
-  - @cats.each do |k, v|
-    %div
-      = link_to_unless_current k, v
+  %ul
+    - @tag_groups.sort{|a,b| a.title <=> b.title}.each do |tag_group|
+      %li
+        %div.tagGroup
+          #{tag_group.title}
+        %ul
+          - tags = [@tags.find_by_tag_group_id(tag_group.id)]
+          - tags.sort{|a,b| a.title <=> b.title}.each do |tag|
+            %li.tagItem
+              = link_to_unless_current tag.title, gallery_path(tag.id)
 
 %div#galleryDisplay
-  - @pics.each do |pic|
-    = link_to(image_tag(pic[:thumb_url], {size: '75x75'}), pic[:image_url])
-
+  - @gallery_images.each do |image|
+    = link_to(image_tag(image.thumbnail_path, {size: '75x75'}),
+      image.image_path, class: 'lightBox')

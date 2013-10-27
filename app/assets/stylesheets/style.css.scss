@@ -184,13 +184,41 @@ label {
 $picturewidth: 100px;
 $pictureheight: 100px;
 
-.gallery {
+.gallery, .gallery_images {
   #galleryDisplay {
-    @include span(17);
+    @include span(15);
     @include last;
+    .galleryItem {
+       float: left;
+       width: 110px;
+       border-top: solid 3px $bluecolor;
+       padding-top: 3px;
+       text-align: center;
+       select {
+         font-size: 9pt;
+       }
+    }
   }
   #galleryIndex {
-    @include span(3);
+    @include span(5);
+    ul {
+      list-style:none;
+      padding: 0px;
+
+    }
+    .tagGroup {
+      background-color: #fbc4cb;
+      margin: 0px;
+      padding: 8px;
+      border: 0px;
+    }
+    .tagItem {
+      padding-left: 16px;
+      padding-right: 8px;
+    }
+
+
+
     color: $pinkcolor;
     font: {
       size: 16px;
@@ -237,7 +265,12 @@ $pictureheight: 100px;
     }
   }
 }
-
+.gallery_images {
+  #galleryDisplay {
+    @include span(22);
+    @include last;
+  }
+}
 .image_manager {
   .imgHolder {
     width: 80px;
