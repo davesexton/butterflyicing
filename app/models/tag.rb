@@ -4,5 +4,5 @@ class Tag < ActiveRecord::Base
   has_many :gallery_images
   belongs_to :tag_group
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
 end
