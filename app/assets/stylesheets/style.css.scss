@@ -190,12 +190,12 @@ $pictureheight: 100px;
     @include last;
     .galleryItem {
        float: left;
-       width: 110px;
+       width: 150px;
        border-top: solid 3px $bluecolor;
        padding-top: 3px;
        text-align: center;
        select {
-         font-size: 9pt;
+         font-size: 7pt;
        }
     }
   }
