@@ -7,15 +7,15 @@
 
 %div#galleryIndex
   %ul
-    - @tag_groups.sort{|a,b| a.title <=> b.title}.each do |tag_group|
+    - @tags.map{|t| t.tag_group}.uniq.sort{|a,b| a.title <=> b.title}.each do |tag_group|
       %li
         %div.tagGroup
           #{tag_group.title}
         %ul
-          - tags = [@tags.find_by_tag_group_id(tag_group.id)]
-          - tags.sort{|a,b| a.title <=> b.title}.each do |tag|
-            %li.tagItem
-              = link_to_unless_current tag.title, gallery_path(tag.id)
+          - tag_group.tags.sort{|a,b| a.title <=> b.title}.each do |tag|
+            -if tag.gallery_images.count > 0
+              %li.tagItem
+                = link_to_unless_current tag.title, gallery_path(tag.id)
 
 %div#galleryDisplay
   - @gallery_images.each do |image|
