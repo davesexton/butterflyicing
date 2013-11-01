@@ -1,5 +1,5 @@
 class GalleryImage < ActiveRecord::Base
-  attr_accessible :tag_id, :image
+  attr_accessible :tag_id, :image, :file_name
   attr_accessor  :file_type
 
   belongs_to :tag
