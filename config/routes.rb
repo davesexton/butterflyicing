@@ -20,6 +20,7 @@ Butterflyicing::Application.routes.draw do
   post 'contactus' => 'contactus#send_message'
   get 'home' => 'home'
   get 'gallery/(:id)' => 'gallery#index' , as: :gallery
+  get 'thumbnails/(:image_name)' => 'gallery#thumbnails'
   get 'ourcakes' => 'ourcakes#index'
   get 'weddings' => 'weddings#index'
   get 'cookies' => 'cookies#index'

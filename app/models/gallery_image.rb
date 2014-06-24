@@ -19,15 +19,11 @@ class GalleryImage < ActiveRecord::Base
   end
 
   def thumbnail_path
-    "/images/gallery_thumbnails/#{file_name}"
+    "/thumbnails/#{file_name}"
   end
 
   def image_file_path
     Rails.root.join('public', 'images', 'gallery_images', file_name)
-  end
-
-  def thumbnail_file_path
-    Rails.root.join('public', 'images', 'gallery_thumbnails', file_name)
   end
 
   def image=(file)
@@ -45,8 +41,6 @@ class GalleryImage < ActiveRecord::Base
         file.resize!(cols, rows)
       }
       file.write(Rails.root.join('public', 'images', 'gallery_images', file_name))
-      file.crop_resized!(75, 75, Magick::NorthGravity)
-      file.write(Rails.root.join('public', 'images', 'gallery_thumbnails', file_name))
     end
   end
 

@@ -19,7 +19,7 @@ end
 
 gem 'jquery-rails'
 gem 'rmagick', '>= 2.13.2'
-gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 
 gem 'haml'
 gem 'haml-rails'
@@ -37,7 +37,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
-  # Pretty printed test output
+# Pretty printed test output
 #  gem 'minitest'
 #  gem 'turn', :require => false
 end

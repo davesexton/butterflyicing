@@ -15,4 +15,23 @@ class GalleryController < ApplicationController
 
   end
 
+  def thumbnails
+
+    respond_to do |format|
+      format.jpg do
+        require 'RMagick'
+        path = Rails.root.join('public', 'images','gallery_images')
+        path = path.join("#{params[:image_name]}.jpg")
+        if FileTest.exists?(path)
+          img = Magick::Image::read(path).first
+          img.crop_resized!(75, 75, Magick::NorthGravity)
+          send_data img.to_blob, type: img.mime_type, disposition: :inline
+        else
+          format.any {render text: 'Not found', status: 404}
+        end
+      end
+      format.any {render text: 'Not found', status: 404}
+    end
+  end
+
 end
