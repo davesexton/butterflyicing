@@ -133,7 +133,7 @@ DEPENDENCIES
   haml-rails
   hirb
   jquery-rails
-  mysql2
+  mysql2 (~> 0.3.16)
   rails (= 3.2.14)
   rmagick (>= 2.13.2)
   sass-rails (~> 3.2.6)
