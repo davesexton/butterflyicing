@@ -18,10 +18,10 @@ class TagGroupsControllerTest < ActionController::TestCase
 
   test "should create tag_group" do
     assert_difference('TagGroup.count') do
-      post :create, tag_group: { title: @tag_group.title }
+      post :create, tag_group: { title: 'test' }
     end
 
-    assert_redirected_to tag_group_path(assigns(:tag_group))
+    assert_redirected_to tag_groups_path
   end
 
   test "should show tag_group" do
@@ -36,7 +36,7 @@ class TagGroupsControllerTest < ActionController::TestCase
 
   test "should update tag_group" do
     put :update, id: @tag_group, tag_group: { title: @tag_group.title }
-    assert_redirected_to tag_group_path(assigns(:tag_group))
+    assert_redirected_to tag_groups_path #(assigns(:tag_group))
   end
 
   test "should destroy tag_group" do

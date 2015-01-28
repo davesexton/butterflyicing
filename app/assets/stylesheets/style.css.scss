@@ -33,7 +33,7 @@ input, textarea, select {
     background: -moz-linear-gradient(bottom,  #fff,  #ddd);
 }
 
-header {
+#header {
   @include prepend(1);
   @include span(22);
   @include append(1);
@@ -52,7 +52,7 @@ header {
   }
 }
 
-nav {
+#nav {
   @include prepend(1);
   @include span(22);
   @include append(1);
@@ -97,7 +97,7 @@ nav {
   color: #FF0000;
 }
 
-section {
+.section {
   @include prepend(2);
   @include span(20);
   @include append(2);
@@ -106,7 +106,7 @@ section {
   min-height: 600px;
 }
 
-footer {
+#footer {
   @include span(24);
   @include last;
   text-align: center;

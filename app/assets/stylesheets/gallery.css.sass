@@ -1,0 +1,25 @@
+.gallery, .gallery_images
+  #galleryDisplay
+    @include span(17)
+    @include last
+    .galleryItem
+      float: left
+      width: 150px
+      border-top: solid 3px $nav_background_color
+      padding-top: 3px
+      text-align: center
+      select
+        font-size: 7pt
+  #galleryIndex
+    @include span(5)
+    ul
+      list-style: none
+      padding: 0px
+    .tagGroup
+      background-color: #fbc4cb
+      margin: 0px
+      padding: 8px
+      border: 0px
+    .tagItem
+      padding-left: 16px
+      padding-right: 8px

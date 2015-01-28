@@ -40,13 +40,13 @@
 %a{name: "contactForm"}
 = form_for @message, url: contactus_path do |f|
   = f.label :name, 'Your name:'
-  = f.text_field :name, size: 25
+  = f.text_field :name, size: 25, placeholder: 'Your name'
   %br/
   = f.label :email, 'Your email address:'
-  = f.text_field :email, size: 25
+  = f.text_field :email, size: 25, placeholder: 'Your email address'
   %br/
   = f.label :message, 'Your message:'
   %br/
-  = f.text_area :message, size: '40x10'
+  = f.text_area :message, size: '40x10',placeholder: 'Your message'
   %br/
   = f.submit "Send"

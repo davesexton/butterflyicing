@@ -9,7 +9,7 @@
   = render 'form'
 
 %div#galleryDisplay
-  - @gallery_images.sort{|a,b| a.tag.title <=> b.tag.title}.each do |gallery_image|
+  - @gallery_images.sort{|a, b| a.tag.title <=> b.tag.title}.each do |gallery_image|
     %div.galleryItem
       = link_to(image_tag(gallery_image.thumbnail_path,
         {size: '100x100'}),

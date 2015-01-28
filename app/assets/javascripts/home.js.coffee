@@ -2,14 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-#IE8 fixes
-d = document
-d.createElement 'header'
-d.createElement 'nav'
-d.createElement 'hgroup'
-d.createElement 'footer'
-d.createElement 'section'
-
 swapImages = (id) ->
   $(".#{id}").each ->
     active = $(@).children(".imgShow")

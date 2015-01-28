@@ -1,0 +1,160 @@
+$header_background_color: #fbc4cb
+$nav_background_color: #92c6e5
+$textcolor: #222222
+$menuover: #666666
+$menulink: #FFFFFF
+$h2color: #77b3d9
+
+@import compass/reset
+@import compass
+@import compass/css3
+@import blueprint
+@import gallery
+@import jquery.lightbox-0.5
+/*
+  @import blueprint/liquid
+
+*, table
+  font-family: Verdana
+  color: $textcolor
+
+body
+  background-image: url('flower_pattern.jpg')
+
+h2
+  color: $h2color
+  font-size: 1.75em
+  margin-bottom: 0.25em
+  border-bottom: 1px solid $h2color
+  display: inline-block
+
+#container
+  +container
+  +box-shadow(0px,0px,7px,7px,rgba(black, 0.4))
+  +border-radius(21px)
+  background-color: $header_background_color
+  border: 7px solid darken($header_background_color, 10%)
+  margin:
+    top: 10px
+    bottom: 20px
+/*
+  +showgrid
+
+#header
+  +span(24)
+  +border-corner-radius(top,left,15px)
+  +border-corner-radius(top,right,15px)
+  background:
+    image: url('header_background.png')
+    repeat: no-repeat
+  height: 212px
+  min-height: 212px
+  background-color: $header_background_color
+  h1
+    color: $menulink
+    top: 170px
+    left: 440px
+    position: relative
+    font:
+      size: 2em
+      style: italic
+
+#footer
+  +span(24)
+  +border-corner-radius(bottom,left,15px)
+  +border-corner-radius(bottom,right,15px)
+  height: 42px
+  min-height: 42px
+  text-align: center
+  background-color: $header_background_color
+  border:
+    top: 2px solid darken($header_background_color, 10%)
+
+#nav
+  +prepend(5)
+  +span(19)
+  +clearfix
+  height: 42px
+  min-height: 42px
+  background-color: $nav_background_color
+  background:
+    image: url('nav_background.png')
+    repeat: no-repeat
+  font:
+    size: 16px
+    weight: bold
+  border:
+    bottom: 2px solid darken($header_background_color, 10%)
+
+  ul
+    width: 100%
+    list-style: none
+    margin-top: 5px
+    li
+      float: left
+      padding-left: 12px
+      &:not(:last-child):after
+        content: "|"
+        color: darken($nav_background_color, 30%)
+        padding-left: 12px
+      a
+        color: $menulink
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+          color: $menuover
+
+#content
+  +prepend(1)
+  +span(22)
+  +append(1)
+  background-color: white
+  padding:
+    top: 12px
+
+.imgHide
+  display: none
+
+.imgShow
+  display: block
+
+.imgRotorRight
+  +span(7)
+  +last
+
+.imgRotorLeft
+  +span(7)
+
+.columnRight
+  +span(15)
+  +last
+
+.columnLeft
+  +span(15)
+
+blockquote
+  background: #f9f9f9
+  border-left: 10px solid #ccc
+  margin: 1.5em 10px
+  padding: 0.5em 10px
+  font-size: 1.25em
+  p:first-child:before
+    content:  "\201C"
+    display: inline
+    color: #ccc
+    font-size: 4em
+    line-height: 0.1em
+    vertical-align: -0.4em
+    margin-right: 0.2em
+  p:nth-child(2):after
+    content:  "\201D"
+    display: inline
+    color: #ccc
+    font-size: 4em
+    line-height: 0.1em
+    vertical-align: 0.4em
+    float: right
+  .cite
+    margin:
+      left: 0.5em
+      bottom: 0.2em

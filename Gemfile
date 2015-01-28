@@ -13,6 +13,8 @@ gem 'mysql2'
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
+  gem 'compass-rails'
+  gem 'bootstrap-sass'
 
   gem 'uglifier', '>= 1.3.0'
 end

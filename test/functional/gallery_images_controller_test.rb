@@ -18,10 +18,11 @@ class GalleryImagesControllerTest < ActionController::TestCase
 
   test "should create gallery_image" do
     assert_difference('GalleryImage.count') do
-      post :create, gallery_image: { tag_id: @gallery_image.tag_id }
+      image = fixture_file_upload('files/test_image.jpg', 'image/jpeg')
+      post :create, gallery_image: { tag_id: @gallery_image.tag_id, image: image }
     end
 
-    assert_redirected_to gallery_image_path(assigns(:gallery_image))
+    assert_redirected_to gallery_images_path
   end
 
   test "should show gallery_image" do
@@ -36,7 +37,7 @@ class GalleryImagesControllerTest < ActionController::TestCase
 
   test "should update gallery_image" do
     put :update, id: @gallery_image, gallery_image: { tag_id: @gallery_image.tag_id }
-    assert_redirected_to gallery_image_path(assigns(:gallery_image))
+    assert_redirected_to gallery_images_path
   end
 
   test "should destroy gallery_image" do
